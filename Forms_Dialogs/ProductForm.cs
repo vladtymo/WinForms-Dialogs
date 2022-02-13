@@ -12,12 +12,17 @@ namespace Forms_Dialogs
 {
     public partial class ProductForm : Form
     {
-        private Product product;
+        public Product Product { get; set; }
+        public ProductForm()
+        {
+            InitializeComponent();
+            Product = new Product();
+        }
         public ProductForm(Product product)
         {
             InitializeComponent();
 
-            this.product = product;
+            this.Product = product;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,10 +32,10 @@ namespace Forms_Dialogs
                 MessageBox.Show("Enter a product name!");
                 return;
             }
-            product.Name = nameTb.Text;
-            product.Price = priceNumeric.Value;
-            product.ProductDate = prodDatePicker.Value;
-            product.Description = descriptionTb.Text;
+            Product.Name = nameTb.Text;
+            Product.Price = priceNumeric.Value;
+            Product.ProductDate = prodDatePicker.Value;
+            Product.Description = descriptionTb.Text;
 
             this.DialogResult = DialogResult.OK;
             this.Close();

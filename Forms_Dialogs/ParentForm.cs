@@ -49,16 +49,19 @@ namespace Forms_Dialogs
         private void button3_Click(object sender, EventArgs e)
         {
             // --------- Data from Child to Parent form ---------
-            Product newProduct = new Product();
 
             // 1 - by putting reference to the child form
-            ProductForm form = new ProductForm(newProduct);
+            //Product newProduct = new Product();
+            //ProductForm form = new ProductForm(newProduct);
+
+            // 2 - by using public property
+            ProductForm form = new ProductForm();
 
             DialogResult result = form.ShowDialog();
 
             // check result after close
             if (result == DialogResult.OK)
-                prodInfoTb.Text = newProduct.ToString();
+                prodInfoTb.Text = form.Product.ToString();
         }
     }
 }
