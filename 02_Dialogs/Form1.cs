@@ -42,7 +42,7 @@ namespace _02_Dialogs
         {
             //FileStream fs = new FileStream()
             //StreamReader sr = new StreamReader()
-            //File.ReadAllText();
+            //File.ReadAllText()
 
             OpenFileDialog dialog = new OpenFileDialog();
 
@@ -81,5 +81,12 @@ namespace _02_Dialogs
                 MessageBox.Show("Folder: " + dialog.SelectedPath);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PrintDialog dialog = new PrintDialog();
+
+            dialog.ShowDialog();
+        }
     }
-}
+}   
